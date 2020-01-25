@@ -2,7 +2,7 @@ jobs:
  build:
  deploy:
   docker:
-   - image: circleci/php:7.2-browsers
+    - image: circleci/php:7.2-browsers
    working_directory: /var/www/html
    steps:
      - checkout
