@@ -8,7 +8,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "AAAAB3NzaC1yc2EAAAADAQABAAABAQDL+QgFKHq24zypfhOhvGP8ZbhJ9utRRm62O3DMB8cBvWbQoXf1anc5z7k2XzQyGlUij4XQnJj0z16dBJLGGadmd0sHf/HFMVr44oT/oZ8gQnieIJrAiNP7P7CbTN4IOBffYFKwS+jeH9y5n4ppb55JsTGWEKg6+0dqVZz28Li3qw5HhNdJd51FGFMvE7hy15V0p8c9Xg1vGAjz3I7DeY/LKvEFtU0kW4u0Cl/V9HJcj06uineR2x8MURfF5LIQJuNZSTmq41VGjVhHg1EUnnjtx/MYDI5XOOcXkwod4PLLILMW/EeBVid5AyMQgql8BSmALpkbRGOytECmKpecO5AJ"
+            - "51:da:72:27:cf:df:de:c4:fe:c1:13:2e:1e:2b:2d:3c"
       - run:
           name: Install Deployer
           command: |
