@@ -15,7 +15,7 @@ jobs:
     curl -LO https://deployer.org/deployer.phar
     sudo mv deployer.phar /usr/local/bin/dep
     sudo chmod +x /usr/local/bin/dep
-     - run:
-     name: Deploy
-     command:
-     dep deploy world-331.fr.planethoster.net
+   - run:
+   name: Deploy
+   command:
+    dep deploy world-331.fr.planethoster.net
