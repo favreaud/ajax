@@ -3,7 +3,7 @@ jobs:
       deploy:
          docker:
          - image: circleci/php:7.2-browsers
-            working_directory: /var/www/html
+         working_directory: /var/www/html
    steps:
      - checkout
      - add_ssh_keys:
