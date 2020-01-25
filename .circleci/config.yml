@@ -1,30 +1,18 @@
-version: 2.1
+version: 2.0
 jobs:
-   build:
-      deploy:
-         docker:
-         - image: circleci/php:7.2-browsers
-         working_directory: /var/www/html
-      steps:
-      - checkout
-      - add_ssh_keys:
-      fingerprints:
-      - "51:da:72:27:cf:df:de:c4:fe:c1:13:2e:1e:2b:2d:3c"
   build:
-    docker:
-      - image: alpine:3.7
+    machine:
+      image: circleci/classic:latest
+    branches:
+          only:
+            - master
     steps:
       - run:
-   name: Install Deployer
-   command:
-     curl -LO https://deployer.org/deployer.phar
-     sudo mv deployer.phar /usr/local/bin/dep
-     sudo chmod +x /usr/local/bin/dep
-   - run:
-   name: Deploy
-      command:
-       dep deploy world-331.fr.planethoster.net
-          name: The First Step
+          name: Install LFTP
           command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+            sudo apt-get update;
+            sudo apt-get install lftp;
+      - checkout
+      - run:
+          name: Send Via SFTP
+          command: lftp sftp://${username}:${password}@${hostname} -e "mirror -v -R --exclude .git/ --exclude .circleci/ ./ ${site_name}/wp-content/themes/${theme}; quit"
