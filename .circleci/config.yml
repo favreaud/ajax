@@ -15,4 +15,8 @@ jobs:
       - checkout
       - run:
           name: Send Via SFTP
-          command: lftp sftp://${username}:${password}@${hostname} -e "mirror -v -R --exclude .git/ --exclude .circleci/ ./ ${site_name}/wp-content/themes/${theme}; quit"
+          command: |
+            set ssl:verify-certificate no
+            set sftp:auto-confirm yes
+            open sftp://didiuxwq:HQGhbv3BEVmzk4@world-331.fr.planethoster.net
+            
