@@ -18,4 +18,4 @@ jobs:
     - run:
     name: Deploy
     command:
-    dep deploy world-331.fr.planethoster.net
+     dep deploy world-331.fr.planethoster.net
