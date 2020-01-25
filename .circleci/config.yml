@@ -1,6 +1,5 @@
 jobs:
-  build: ... # from above
-  
+  build:
   deploy:
     docker:
       - image: circleci/php:7.2-browsers
