@@ -15,5 +15,5 @@ jobs:
       - checkout
       - run:
           name: Send Via SFTP
-          command: lftp -p 5022 sftp://didiuxwq:HQGhbv3BEVmzk4@world-331.fr.planethoster.net -e "mirror -v -R --exclude .circleci/ ./; quit";
+          command: lftp -p 5022 sftp://didiuxwq:HQGhbv3BEVmzk4@world-331.fr.planethoster.net -e "mirror -v -R --exclude .git/ --exclude .circleci/ /home/didiuxwq/tmp; quit";
             
