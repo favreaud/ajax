@@ -15,5 +15,5 @@ jobs:
       - checkout
       - run:
           name: Send Via SFTP
-          command: lftp sftp://didiuxwq:HQGhbv3BEVmzk4@world-331.fr.planethoster.net:5022 mirror -R /public_html /www;
+          command: lftp -p 5022 sftp://didiuxwq:HQGhbv3BEVmzk4@world-331.fr.planethoster.net -e mirror "-e /public_html /www; quit";
             
