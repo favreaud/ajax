@@ -2,20 +2,20 @@ jobs:
   build:
   deploy:
     docker:
-      - image: circleci/php:7.2-browsers
-      working_directory: /var/www/html
-      steps:
-       - checkout
-       - add_ssh_keys:
+        - image: circleci/php:7.2-browsers
+        working_directory: /var/www/html
+        steps:
+          - checkout
+          - add_ssh_keys:
           fingerprints:
-            - "51:da:72:27:cf:df:de:c4:fe:c1:13:2e:1e:2b:2d:3c"
-       - run:
-          name: Install Deployer
-          command: |
-            curl -LO https://deployer.org/deployer.phar
-            sudo mv deployer.phar /usr/local/bin/dep
-            sudo chmod +x /usr/local/bin/dep
-       - run:
-          name: Deploy
-          command: |
-            dep deploy world-331.fr.planethoster.net
+             - "51:da:72:27:cf:df:de:c4:fe:c1:13:2e:1e:2b:2d:3c"
+          - run:
+            name: Install Deployer
+            command: |
+              curl -LO https://deployer.org/deployer.phar
+              sudo mv deployer.phar /usr/local/bin/dep
+              sudo chmod +x /usr/local/bin/dep
+         - run:
+            name: Deploy
+            command: |
+              dep deploy world-331.fr.planethoster.net
